@@ -51,6 +51,27 @@ void ALyraPlayerState::PreInitializeComponents()
 	Super::PreInitializeComponents();
 }
 
+
+//// chengzimdl 2025.09.05
+void ALyraPlayerState::RegisterToExperienceLoadedToSetPawnData()
+{
+	if (bRegisteredToExperienceLoaded) return;
+
+	const UWorld* World = GetWorld();
+	if (World && World->IsGameWorld() && World->GetNetMode() != NM_Client)
+	{
+		const AGameStateBase* GameState = GetWorld()->GetGameState();
+		check(GameState);
+
+		ULyraExperienceManagerComponent* ExperienceComponent = GameState->FindComponentByClass<ULyraExperienceManagerComponent>();
+		check(ExperienceComponent);
+		ExperienceComponent->CallOrRegister_OnExperienceLoaded(FOnLyraExperienceLoaded::FDelegate::CreateUObject(this, &ThisClass::OnExperienceLoaded));
+	}
+
+	bRegisteredToExperienceLoaded = true; // only set this once. In the player's case the PlayerState is persistant while it gets destroyed with the AIs that don't have a player 
+}
+
+
 void ALyraPlayerState::Reset()
 {
 	Super::Reset();
@@ -171,7 +192,9 @@ void ALyraPlayerState::PostInitializeComponents()
 	check(AbilitySystemComponent);
 	AbilitySystemComponent->InitAbilityActorInfo(this, GetPawn());
 
-	UWorld* World = GetWorld();
+	// modified by chengzimdl on 2025.09.05
+	// the logics are move into new function RegisterToExperienceLoadedToSetPawnData()
+	/*UWorld* World = GetWorld();
 	if (World && World->IsGameWorld() && World->GetNetMode() != NM_Client)
 	{
 		AGameStateBase* GameState = GetWorld()->GetGameState();
@@ -179,8 +202,11 @@ void ALyraPlayerState::PostInitializeComponents()
 		ULyraExperienceManagerComponent* ExperienceComponent = GameState->FindComponentByClass<ULyraExperienceManagerComponent>();
 		check(ExperienceComponent);
 		ExperienceComponent->CallOrRegister_OnExperienceLoaded(FOnLyraExperienceLoaded::FDelegate::CreateUObject(this, &ThisClass::OnExperienceLoaded));
-	}
+	}*/
+
 }
+
+
 
 void ALyraPlayerState::SetPawnData(const ULyraPawnData* InPawnData)
 {

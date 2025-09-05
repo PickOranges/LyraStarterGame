@@ -44,6 +44,17 @@ ALyraGameMode::ALyraGameMode(const FObjectInitializer& ObjectInitializer)
 
 const ULyraPawnData* ALyraGameMode::GetPawnDataForController(const AController* InController) const
 {
+	// added on 2025.09.05 by chengzimdl
+	if (const ULyraPawnExtensionComponent* PawnExtComp = ULyraPawnExtensionComponent::FindPawnExtensionComponent(InController->GetPawn()))
+	{
+		if (const ULyraPawnData* PawnData = PawnExtComp->GetPawnData<ULyraPawnData>())
+		{
+			return PawnData;
+		}
+	}
+	// end of modifying...
+	
+
 	// See if pawn data is already set on the player state
 	if (InController != nullptr)
 	{

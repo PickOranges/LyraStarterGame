@@ -70,6 +70,11 @@ public:
 	virtual void PostInitializeComponents() override;
 	//~End of AActor interface
 
+
+	// added on 2025.09.05 chengzimdl
+	void RegisterToExperienceLoadedToSetPawnData();
+
+
 	//~APlayerState interface
 	virtual void Reset() override;
 	virtual void ClientInitialize(AController* C) override;
@@ -143,6 +148,8 @@ protected:
 
 	UPROPERTY(ReplicatedUsing = OnRep_PawnData)
 	TObjectPtr<const ULyraPawnData> PawnData;
+
+	bool bRegisteredToExperienceLoaded;
 
 private:
 
