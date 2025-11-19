@@ -40,6 +40,10 @@ int ULyraHealthSet::SetMaxHealth(int NewHealth)
 {
 	MaxHealth.SetBaseValue(NewHealth);
 	MaxHealth.SetCurrentValue(NewHealth);
+
+	Health.SetBaseValue(NewHealth);
+	Health.SetCurrentValue(NewHealth);
+
 	return MaxHealth.GetCurrentValue();
 }
 
