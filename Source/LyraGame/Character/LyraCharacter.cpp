@@ -576,6 +576,7 @@ bool ALyraCharacter::UpdateSharedReplication()
 	return false;
 }
 
+
 void ALyraCharacter::FastSharedReplication_Implementation(const FSharedRepMovement& SharedRepMovement)
 {
 	if (GetWorld()->IsPlayingReplay())

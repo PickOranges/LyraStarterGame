@@ -35,6 +35,14 @@ void ULyraHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 	DOREPLIFETIME_CONDITION_NOTIFY(ULyraHealthSet, MaxHealth, COND_None, REPNOTIFY_Always);
 }
 
+
+int ULyraHealthSet::SetMaxHealth(int NewHealth)
+{
+	MaxHealth.SetBaseValue(NewHealth);
+	MaxHealth.SetCurrentValue(NewHealth);
+	return MaxHealth.GetCurrentValue();
+}
+
 void ULyraHealthSet::OnRep_Health(const FGameplayAttributeData& OldValue)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(ULyraHealthSet, Health, OldValue);

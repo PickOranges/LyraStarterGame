@@ -146,6 +146,9 @@ public:
 
 	virtual bool UpdateSharedReplication();
 
+
+
+
 protected:
 
 	virtual void OnAbilitySystemInitialized();

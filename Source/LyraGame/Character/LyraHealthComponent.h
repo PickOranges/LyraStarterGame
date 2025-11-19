@@ -84,6 +84,8 @@ public:
 	// Applies enough damage to kill the owner.
 	virtual void DamageSelfDestruct(bool bFellOutOfWorld = false);
 
+
+
 public:
 
 	// Delegate fired when the health value has changed. This is called on the client but the instigator may not be valid
@@ -101,6 +103,11 @@ public:
 	// Delegate fired when the death sequence has finished.
 	UPROPERTY(BlueprintAssignable)
 	FLyraHealth_DeathEvent OnDeathFinished;
+
+
+	// chengzimdl 2025.11.19
+	UPROPERTY(BlueprintReadWrite)
+	TObjectPtr<const ULyraHealthSet> HealthSet;
 
 protected:
 
@@ -122,8 +129,8 @@ protected:
 	TObjectPtr<ULyraAbilitySystemComponent> AbilitySystemComponent;
 
 	// Health set used by this component.
-	UPROPERTY()
-	TObjectPtr<const ULyraHealthSet> HealthSet;
+	//UPROPERTY()
+	//TObjectPtr<const ULyraHealthSet> HealthSet;  // commented out by chengzimdl 2025.11.19
 
 	// Replicated state used to handle dying.
 	UPROPERTY(ReplicatedUsing = OnRep_DeathState)

@@ -49,6 +49,12 @@ public:
 	// Delegate to broadcast when the health attribute reaches zero
 	mutable FLyraAttributeEvent OnOutOfHealth;
 
+
+	// chengzimdl 2025.11.19
+	UFUNCTION(BlueprintCallable)
+	int SetMaxHealth(int NewHealth);
+
+
 protected:
 
 	UFUNCTION()
@@ -74,6 +80,7 @@ private:
 
 	// The current max health attribute.  Max health is an attribute since gameplay effects can modify it.
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxHealth, Category = "Lyra|Health", Meta = (AllowPrivateAccess = true))
+
 	FGameplayAttributeData MaxHealth;
 
 	// Used to track when the health reaches 0.
