@@ -35,6 +35,8 @@ public:
 
 	ULyraHealthSet();
 
+
+
 	ATTRIBUTE_ACCESSORS(ULyraHealthSet, Health);
 	ATTRIBUTE_ACCESSORS(ULyraHealthSet, MaxHealth);
 	ATTRIBUTE_ACCESSORS(ULyraHealthSet, Healing);

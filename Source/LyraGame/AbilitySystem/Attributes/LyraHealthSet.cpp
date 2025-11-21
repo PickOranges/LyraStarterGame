@@ -27,6 +27,9 @@ ULyraHealthSet::ULyraHealthSet()
 	HealthBeforeAttributeChange = 0.0f;
 }
 
+
+
+
 void ULyraHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
