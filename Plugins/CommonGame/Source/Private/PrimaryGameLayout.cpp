@@ -119,6 +119,7 @@ void UPrimaryGameLayout::OnWidgetStackTransitioning(UCommonActivatableWidgetCont
 
 void UPrimaryGameLayout::FindAndRemoveWidgetFromLayer(UCommonActivatableWidget* ActivatableWidget)
 {
+	return; // chengzimdl
 	// We're not sure what layer the widget is on so go searching.
 	for (const auto& LayerKVP : Layers)
 	{
