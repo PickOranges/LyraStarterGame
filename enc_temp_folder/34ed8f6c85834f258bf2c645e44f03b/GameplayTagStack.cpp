@@ -45,8 +45,6 @@ void FGameplayTagStackContainer::AddStack(FGameplayTag Tag, int32 StackCount)
 		FGameplayTagStack& NewStack = Stacks.Emplace_GetRef(Tag, StackCount);  
 		MarkItemDirty(NewStack);
 		TagToCountMap.Add(Tag, StackCount);
-
-
 	//}
 
 }
