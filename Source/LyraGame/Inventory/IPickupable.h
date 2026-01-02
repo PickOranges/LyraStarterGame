@@ -6,6 +6,8 @@
 #include "Templates/SubclassOf.h"
 #include "UObject/Interface.h"
 
+#include "GameplayTagContainer.h"  // chengzimdl 260102
+
 #include "UObject/ObjectPtr.h"
 #include "IPickupable.generated.h"
 
@@ -17,6 +19,8 @@ class ULyraInventoryItemInstance;
 class ULyraInventoryManagerComponent;
 class UObject;
 struct FFrame;
+
+struct FGameplayTag; // added by chengzimdl
 
 USTRUCT(BlueprintType)
 struct FPickupTemplate
@@ -50,8 +54,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<FPickupInstance> Instances;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	//UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)	// chengzimdl 260102
 	TArray<FPickupTemplate> Templates;
+
+	// chengzimdl 260102
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) 
+	FGameplayTag InventoryTypeTmp;
 };
 
 /**  */
