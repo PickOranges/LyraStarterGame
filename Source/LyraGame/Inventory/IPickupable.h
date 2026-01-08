@@ -31,7 +31,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	int32 StackCount = 1;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite/*chengzi0108*/)
 	TSubclassOf<ULyraInventoryItemDefinition> ItemDef;
 };
 
