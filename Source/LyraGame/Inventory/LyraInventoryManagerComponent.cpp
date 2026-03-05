@@ -109,7 +109,7 @@ ULyraInventoryItemInstance* FLyraInventoryList::AddEntry(TSubclassOf<ULyraInvent
 
 void FLyraInventoryList::AddEntry(ULyraInventoryItemInstance* Instance)
 {
-w	unimplemented();
+	unimplemented();
 }
 
 void FLyraInventoryList::RemoveEntry(ULyraInventoryItemInstance* Instance)
