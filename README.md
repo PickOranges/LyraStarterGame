@@ -1,4 +1,3 @@
-<img width="960" height="611" alt="AI" src="https://github.com/user-attachments/assets/a436f7a2-7ecf-4322-8bc9-020d76c2535e" />
 # GAS, Animation and UI-System based on UE5 LyraStarterGame
 
 ## Overview
@@ -14,3 +13,5 @@ Online multiplayer gameplay system with different NPC characters, AI, GAS, EQS, 
 - Gameplay Ability System (GAS) for modular weapons and abilities
 - state-driven animation systems for complex locomotion (e.g.swimming, climbing)
 - inventory system including UI development using UMG and Slate
+
+<img width="960" height="611" alt="AI" src="https://github.com/user-attachments/assets/a436f7a2-7ecf-4322-8bc9-020d76c2535e" />
