@@ -1,7 +1,7 @@
 # GAS, Animation and UI-System based on UE5 LyraStarterGame
 
 ## Overview
-Online multiplayer gameplay system with different NPC characters, GAS, UI and layered animation system.
+Online multiplayer gameplay system with different NPC characters, AI, GAS, UI and layered animation system.
 
 ## Tech Stack
 - C++
