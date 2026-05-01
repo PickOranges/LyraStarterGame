@@ -1,5 +1,8 @@
 # GAS, Animation and UI-System based on UE5 LyraStarterGame
 
+## Overview
+Online multiplayer system with different NPC characters, GAS, UI and layered animation system.
+
 ## Tech Stack
 - C++
 - Unreal 5.4
@@ -8,4 +11,5 @@
 - hybrid architecture of C++ and Blueprint
 - state-driven animation systems for complex locomotion (e.g.swimming, climbing)
 - Gameplay Ability System (GAS) for modular weapons and abilities
-- Designed and implemented an inventory system including UI development using UMG and Slate
+- inventory system including UI development using UMG and Slate
+- controller, behavior tree, AI, Navigation system for different NPC enemies
